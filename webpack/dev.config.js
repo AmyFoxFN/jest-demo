@@ -8,8 +8,6 @@ const devConfig = merge.smart(baseConfig, {
   mode: 'development',
   devtool: 'source-map',
   devServer: {
-    host: '0.0.0.0',
-    useLocalIp: true,
     port: 8000,
     open: true
   },
