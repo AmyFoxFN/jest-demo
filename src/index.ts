@@ -1,1 +1,1 @@
-console.log('Hello, generator!')
+import './3d-render'

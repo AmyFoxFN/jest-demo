@@ -1,23 +1,20 @@
 import * as THREE from 'three'
+import ThreeContext from './three-context'
 
-export default function renderCube(threeContext) {
-  addCube(0, 0, 0)
+const threeContext = new ThreeContext()
 
-  threeContext.render()
+addCube(0, 0, 0)
 
-  function addCube(x, y, z) {
-    const geometry = new THREE.BoxGeometry(1, 1, 1)
-    const material = new THREE.MeshBasicMaterial({
-      color: 'pink'
-    })
+threeContext.render()
 
-    material.onBeforeCompile = (shader, renderer) => {
-      console.log('before compile')
-    }
+function addCube(x, y, z) {
+  const geometry = new THREE.BoxGeometry(1, 1, 1)
+  const material = new THREE.MeshBasicMaterial({
+    color: 'pink'
+  })
 
-    const cube = new THREE.Mesh(geometry, material)
-    cube.position.set(x, y, z)
+  const cube = new THREE.Mesh(geometry, material)
+  cube.position.set(x, y, z)
 
-    threeContext.add(cube)
-  }
+  threeContext.add(cube)
 }
