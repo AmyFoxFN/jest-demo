@@ -5,7 +5,7 @@ test('should be titled correctly', async () => {
 
 test('should be render correctly', async () => {
   await page.goto('http://localhost:8000/')
-  page.screenshot({ path: 'test/snapshots/3d-render-1.png' })
+  page.screenshot({ path: 'test/snapshots/loaded-render.png' })
   await new Promise((resolve) => {
     setTimeout(() => {
       resolve()
