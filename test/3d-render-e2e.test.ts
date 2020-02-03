@@ -1,4 +1,4 @@
-// @todo declare ts
+// @todo declare toMatchImageSnapshot
 // @ts-nocheck
 
 test('should be titled correctly', async () => {
