@@ -12,3 +12,11 @@ test('should be render correctly when loaded', async () => {
 
   expect(image).toMatchImageSnapshot()
 })
+
+test('should move cube correctly', async () => {
+  await page.goto('http://localhost:8000/')
+  await page.click('#move-cube-btn')
+  const image = await page.screenshot()
+
+  expect(image).toMatchImageSnapshot()
+})
