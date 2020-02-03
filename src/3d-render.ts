@@ -3,11 +3,12 @@ import ThreeContext from './three-context'
 
 const threeContext = new ThreeContext()
 
-addCube(0, 0, 0)
+const cube = createCube(0, 0, 0)
+threeContext.add(cube)
 
 threeContext.render()
 
-function addCube(x, y, z) {
+function createCube(x, y, z) {
   const geometry = new THREE.BoxGeometry(1, 1, 1)
   const material = new THREE.MeshBasicMaterial({
     color: 'pink'
@@ -16,5 +17,12 @@ function addCube(x, y, z) {
   const cube = new THREE.Mesh(geometry, material)
   cube.position.set(x, y, z)
 
-  threeContext.add(cube)
+  return cube
 }
+
+const btn = document.getElementById('move-cube-btn')
+
+btn?.addEventListener('click', function moveCube() {
+  cube.position.set(3, 0, 0)
+  threeContext.render()
+})
