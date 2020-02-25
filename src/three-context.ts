@@ -5,13 +5,18 @@ export default class ThreeContext {
   public camera: THREE.PerspectiveCamera
   public renderer: THREE.WebGLRenderer
 
-  constructor(canvas?) {
+  constructor(canvas?, background?) {
     this.renderer = new THREE.WebGLRenderer({
-      canvas: canvas || document.getElementById('three-canvas') as HTMLCanvasElement
+      canvas: canvas || (document.getElementById('three-canvas') as HTMLCanvasElement)
     })
 
     // init scene and camera
     this.scene = new THREE.Scene()
+
+    if (background) {
+      this.scene.background = new THREE.Color(background)
+    }
+
     this.camera = new THREE.PerspectiveCamera(75, 2, 0.1, 10)
     this.camera.position.z = 5
 
