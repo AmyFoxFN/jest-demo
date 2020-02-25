@@ -5,9 +5,9 @@ export default class ThreeContext {
   public camera: THREE.PerspectiveCamera
   public renderer: THREE.WebGLRenderer
 
-  constructor() {
+  constructor(canvas?) {
     this.renderer = new THREE.WebGLRenderer({
-      canvas: document.getElementById('three-canvas') as HTMLCanvasElement
+      canvas: canvas || document.getElementById('three-canvas') as HTMLCanvasElement
     })
 
     // init scene and camera
