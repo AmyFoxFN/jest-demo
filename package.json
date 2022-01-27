@@ -37,7 +37,7 @@
     "webpack-merge": "^4.2.1"
   },
   "dependencies": {
-    "three": "^0.112.1"
+    "three": "^0.137.0"
   },
   "jest": {
     "runner": "@jest-runner/electron",
